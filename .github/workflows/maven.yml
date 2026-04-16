@@ -9,8 +9,6 @@ jobs:
   build:
     runs-on: windows-latest
 
-    # REMOVED: FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 (Stops the deprecation warning)
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -22,7 +20,4 @@ jobs:
           java-version: '17'
 
       - name: Build using Maven
-        # Ensure 'cicd-demo' is a folder in your repo containing pom.xml
-        # If pom.xml is in the root, remove the line below entirely.
         run: mvn clean install
-        working-directory: cicd-demo
